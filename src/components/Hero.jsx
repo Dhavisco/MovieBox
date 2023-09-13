@@ -1,8 +1,15 @@
-import Poster from "../assets/Poster.svg"
+// import Poster from "../assets/Poster.svg"
+import Herotext from "./Herotext";
+import '../App.css'
 const Hero = () => {
   return (
-    <div className="">
-      <img src={Poster} alt="bg" className="w-full" />
+    <div className="hero">
+    
+    {/* <img src={Poster} alt="bg" className="w-full" /> */}
+      <div>
+<Herotext/>
+      </div>
+
     </div>
 
   )

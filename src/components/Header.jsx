@@ -1,10 +1,10 @@
-import Button from "./Button";
+import {SignInButton} from "./Button";
 import logo from "../assets/Logo.svg";
 import Nav from "../assets/Menu.svg"
 export default function Header() {
   return (
     <header>
-      <div className='flex   items-center fixed w-full justify-around pt-6'>
+      <div className='flex items-center fixed w-full justify-around pt-6'>
             <div className="brand flex  items-center">
                 <div className="pr-5">
                   <img src={logo} alt="logo" />
@@ -18,7 +18,7 @@ export default function Header() {
             </div>
             
             <div className="flex justify-between items-center">
-            <Button/>
+            <SignInButton/>
             <div className="pl-5">
                 <img src={Nav} alt="nav " />
             </div>

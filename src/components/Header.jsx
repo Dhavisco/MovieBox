@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header>
       <div className='flex items-center fixed w-full justify-around pt-6'>
-            <div className="brand flex  items-center">
+            <div className="brand flex items-center">
                 <div className="pr-5">
                   <img src={logo} alt="logo" />
                 </div>

@@ -1,15 +1,26 @@
+import { useState } from "react";
 import {SignInButton} from "./Button";
 import logo from "../assets/Logo.svg";
 import Nav from "../assets/Menu.svg"
 export default function Header() {
+  const [updateNavbar, setUpdateNavbar]=useState();
+
+  function scrollHandler() {
+    if (window.scrollY >= 20) {
+      setUpdateNavbar(true);
+    }
+    setUpdateNavbar(false);
+  }
+
+  window.addEventListener("scroll", scrollHandler);
   return (
     <header>
-      <div className='flex items-center fixed w-full justify-around pt-6'>
-            <div className="brand flex items-center">
+      <div className={updateNavbar ? "flex items-center font-sans fixed w-full justify-around py-6 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-4 shadow-md bg-red-500":'flex items-center font-sans fixed w-full justify-around py-6 bg-transparent'}>
+            <div className="brand flex items-center ">
                 <div className="pr-5">
                   <img src={logo} alt="logo" />
                 </div>
-                <div className="logo-title font-bold text-white ">MovieBox</div>
+                <div className="logo-title font-bold text-white text-[24px]">MovieBox</div>
             </div>
 
             <div className="search">

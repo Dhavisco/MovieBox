@@ -5,7 +5,7 @@ const Card = () => {
   return (
     <div className="card-container pl-5 pt-20 pb-20 ">
         <div className="card grid lg:grid-cols-4 gap-12 lg:ml-20 lg:mr-20 text-black">
-        {Array.from({ length: 12 }).map((_, index) => (
+        {Array.from({ length: 14 }).map((_, index) => (
     <div 
     key={index}
      className="card flex flex-col" data-testid="movie-card">

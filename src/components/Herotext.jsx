@@ -1,6 +1,7 @@
 import { EventButton } from "./Button"
 import imdb from '../assets/imdb.svg'
 import tomato from '../assets/tomato.svg'
+import rectangle from '../assets/Rectangle 1.svg'
 
 
 
@@ -28,7 +29,16 @@ const Herotext = () => {
 
     <EventButton/>
       </div>
+
+       <div className="flex font-sans flex-col gap-2.5 text-xs text-[#9CA3AF] items-end pr-10 justify-center content-center">
+        <div className="flex ">1</div>
+        <div className="flex">2</div>
+        <div className="flex text-white text-base"><span className="pr-1.5 pt-2.5"><img src={rectangle} alt="" /></span>3</div>
+        <div className="flex">4</div>
+        <div className="flex">5</div>
+      </div>
     </div>
+
    
     </>
 

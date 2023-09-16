@@ -1,12 +1,20 @@
+// import {useState, useEffect} from 'react'
 
 
-const CardTest = () => {
-  
-  return (
-    <div>
-      
-    </div>
-  )
-}
+// console.log()
 
-export default CardTest
+// const CardTest = () => {
+
+
+       
+
+//   return (
+//     <div>
+//        {movieLoader.map((movie) => (
+//       <div key={movie.id}>{movie.title}</div>
+//     ))}
+//     </div>
+//   )
+// }
+
+// export default CardTest

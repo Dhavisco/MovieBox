@@ -1,16 +1,11 @@
-const api_key = import.meta.VITE_APP_API_KEY
 
-const Headers = {
-    header:{
+
+   export const header = {
+      method:"GET",
+      headers:{
         "Content-Type": "application/json",
-        "x-api-key": api_key
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5M2UzZDcxY2RjZGNiOGFlOGQ2NDBjYWYwYThhYTBjNyIsInN1YiI6IjY0ZmZkNzdiZDdkY2QyMDBmZmViNGJiMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VHa1UEAfuCLv0UyG9lRE2BRxMw-SQQ1Zm1tUOlciImM"
+      }
+      
     }
-};
 
-const BASE_url = {
-    endpoint: "https://api.themoviedb.org/3"
-}
-
-const requests ={
-    allFavorite:"favorite/movies"
-}

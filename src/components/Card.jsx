@@ -23,14 +23,14 @@ const Card = () => {
        
       });
   }, []);
-  console.log(movieLoader)
+  // console.log(movieLoader)
 
   const baseUrl = "https://image.tmdb.org/t/p/w500";
 
   return (
     <div className="card-container pl-5 pt-20 pb-20 ">
   <div className="card grid lg:grid-cols-4 gap-12 lg:ml-20 lg:mr-20 text-black">
-    {movieLoader.map((key, index) => (
+    {movieLoader.slice(0, 10).map((key, index) => (
       <div key={index} className="relative card flex flex-col" data-testid="movie-card">
         <button
           type="button"

@@ -2,6 +2,10 @@ import { useState } from "react";
 import {SignInButton} from "./Button";
 import logo from "../assets/Logo.svg";
 import Nav from "../assets/Menu.svg"
+import SearchMovie from "./SearchMovie";
+// import SearchMovie from "./SearchMovie";
+
+
 export default function Header() {
   const [updateNavbar, setUpdateNavbar]=useState();
 
@@ -23,9 +27,9 @@ export default function Header() {
                 <div className="logo-title font-bold text-white text-[24px]">MovieBox</div>
             </div>
 
-            <div className="search">
-                <input type="text" name="search" id="search" placeholder="what do you want to watch?" className="placeholder-white text-white bg-transparent border-[2.35px] border-[white] rounded-lg p-2 lg:w-[35rem]"/>
-
+            <div className="search relative">
+            <SearchMovie/>
+        
             </div>
             
             <div className="flex justify-between items-center">

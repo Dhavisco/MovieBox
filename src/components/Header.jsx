@@ -19,7 +19,7 @@ export default function Header() {
   window.addEventListener("scroll", scrollHandler);
   return (
     <header>
-      <div className={updateNavbar ? "flex items-center font-sans fixed w-full justify-around py-6 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-4 shadow-md bg-red-500":'flex items-center font-sans fixed w-full justify-around py-6 bg-transparent'}>
+      <div className={updateNavbar ? "flex items-center font-sans fixed w-full justify-around py-6 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-4 shadow-md bg-red-500 z-50":'flex items-center font-sans fixed w-full justify-around py-6 bg-transparent z-50'}>
             <div className="brand flex items-center ">
                 <div className="pr-5">
                   <img src={logo} alt="logo" />

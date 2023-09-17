@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import search from '../assets/Search.svg'
-
+import '../App.css'
 const SearchMovie = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -9,23 +9,23 @@ const SearchMovie = () => {
     const baseUrl = "https://image.tmdb.org/t/p/w500";
 
   useEffect(() => {
-    // Define your API URL with the search query
+    
     const apiKey = import.meta.env.VITE_API_KEY;
     const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchQuery}`;
    
-    // Show loading indicator
+   
     setLoading(true);
 
-    // Fetch data from the API
+
     axios
       .get(apiUrl)
       .then((response) => {
-        // Hide loading indicator and update search results
+        
         setLoading(false);
         setSearchResults(response.data.results);
       })
       .catch((error) => {
-        // Handle errors
+       
         setLoading(false);
         console.error('Error fetching search results:', error);
       });
@@ -57,9 +57,15 @@ return (
 </label>
       
 
-      {loading && <p>Loading...</p>}
+      {loading ? (
+        
+        <p className="absolute top-[40px] left-0 w-full h-fit-content min-w-[250px] max-h-[350px] p-[10px] bg-white border border-none rounded-[8px] flex flex-col gap-[6px] overflow-y-auto"> 
+        <span className='loading'>Loading...</span>
+        </p>
+      
+        ) : 
 
-      <div className={`${searchQuery.length > 0 ? 'search-results absolute top-[40px] left-0 w-full h-fit-content min-w-[250px] max-h-[350px] p-[10px] bg-white border border-none rounded-[8px] flex flex-col gap-[6px] overflow-y-auto' : ''}`}>
+      (<div className={`${searchQuery.length > 0 ? 'search-results absolute top-[40px] left-0 w-full h-fit-content min-w-[250px] max-h-[350px] p-[10px] bg-white border border-none rounded-[8px] flex flex-col gap-[6px] overflow-y-auto' : ''}`}>
         {searchResults.map((movie) => (
           <div key={movie.id} className="movie-search-card relative transition-all duration-200 ease-in-out flex items-center gap-5 rounded-[10px]">
               <div className="poster-wrap bg-transparent rounded-[10px] min-w-[60px]">
@@ -73,6 +79,7 @@ return (
           </div>
         ))}
       </div>
+)}
     </>
   );
 };

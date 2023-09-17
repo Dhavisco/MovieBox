@@ -3,6 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  animation: spin 60s linear infinite; 
+}
+
+
 .hero{
     background: url("./assets/Poster.svg");
     background-repeat: no-repeat;

@@ -5,7 +5,10 @@ import favourite from '../assets/Favorite.svg'
 import {useState, useEffect} from 'react'
 
 
+
 const Card = () => {
+ 
+
       const [movieLoader, setMovieLoader]=useState([]);
     useEffect(()=>{
      

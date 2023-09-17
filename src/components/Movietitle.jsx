@@ -5,6 +5,8 @@ import twoposter from '../assets/Two Tickets.svg'
 import list from '../assets/List.svg'
 
 const Movietitle = () => {
+
+
   return (
   
         <>
@@ -16,7 +18,7 @@ const Movietitle = () => {
             <div className=" details col-span-2">
                 <div className="1st-section">
                       <div className="flex title text-black">
-                       <span className="font-bold text-[20px]">Top Gun: Maverick • 2022 • PG-13 • 2h 10m</span> 
+                       <span className="font-bold text-[20px]">{}</span> 
                         <span className="text-red-800 text-[15px] text-center font-semibold border-[2px] flex items-center p-2 ml-2 border-red-200 rounded-3xl">
                           Action
                         </span>

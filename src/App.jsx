@@ -4,14 +4,14 @@ import Home from './pages/Home';
 import Moviedetails from './pages/Moviedetails';
 
 function App() {
-
+  // let { userId } = useParams();
   return (
     <>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Home />} />
-       <Route path="/movie" element={<Moviedetails />} />
-</Routes>
+      <Route path="/movie/:id" element={<Moviedetails />} />
+    </Routes>
 </BrowserRouter>
     </>
    

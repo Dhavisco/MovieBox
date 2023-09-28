@@ -6,15 +6,13 @@ import {useState, useEffect} from 'react'
 
 
 
-const Card = () => {
- 
 
-      const [movieLoader, setMovieLoader]=useState([]);
+const Card = () => {
+  const [movieLoader, setMovieLoader]=useState([]);
     useEffect(()=>{
      
-     const apiKey = import.meta.env.VITE_API_KEY;
+    const apiKey = import.meta.env.VITE_API_KEY;
     const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`;
-
 
     axios.get(apiUrl)
       .then((response) => {
@@ -26,24 +24,27 @@ const Card = () => {
        
       });
   }, []);
-  // console.log(movieLoader)
+   console.log(movieLoader)
+   
+   
 
   const baseUrl = "https://image.tmdb.org/t/p/w500";
-
+  
   return (
     <div className="card-container pl-5 pt-20 pb-20 ">
   <div className="card grid lg:grid-cols-4 gap-12 lg:ml-20 lg:mr-20 text-black">
     {movieLoader.slice(0, 10).map((key, index) => (
-      <div key={index} className="relative card flex flex-col" data-testid="movie-card">
+      <div key={index} className="relative card flex flex-col cursor-pointer" data-testid="movie-card" >
         <button
           type="button"
-          className="absolute top-4 right-4 w-8 h-8 flex-shrink-0 bg-[rgba(243,244,246,.5)] bg-opacity-50 backdrop-blur border rounded-full border-none flex justify-center items-center cursor-pointer transition-all duration-200 ease-in-out"
+          className="absolute top-4 right-4 w-8 h-8 flex-shrink-0 bg-[rgba(243,244,246,.5)] bg-opacity-50 backdrop-blur border rounded-full border-none flex justify-center items-center cursor-pointer transition-all duration-200 ease-in-out "
         >
           <img src={favourite} alt="favorite" />
+       
         </button>
 
-        <img src={baseUrl + key.poster_path} alt="poster" data-testid="movie-poster" />
-
+        <a href={`/movie/${key.id}`}><img src={baseUrl + key.poster_path} alt="poster" data-testid="movie-poster" /></a>
+           
         <div className="flex pt-2 pb-1 text-xs text-[#9CA3AF]" data-testid="movie-release-date">
           {key.release_date}
         </div>
@@ -61,13 +62,14 @@ const Card = () => {
           </span>
         </div>
         <div className='flex text-xs pt-1 pb-1 text-[#9CA3AF]'>Action, Adventure, Horror</div>
+
       </div>
     ))}
   </div>
 </div>
 
-
   )
 }
 
 export default Card
+ 

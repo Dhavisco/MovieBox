@@ -3,33 +3,71 @@ import star from '../assets/Star.svg'
 import rectangle from '../assets/Rectangle 37.svg'
 import twoposter from '../assets/Two Tickets.svg'
 import list from '../assets/List.svg'
+import { useParams } from "react-router-dom"
+import axios from "axios"
+import { useEffect, useState } from "react"
+
 
 const Movietitle = () => {
 
+  const { id } = useParams();
+  console.log(id);
+
+
+   const apiKey = import.meta.env.VITE_API_KEY;
+  const [movieDetails, setMovieDetails] = useState([]);
+  console.log(movieDetails);  
+  console.log(typeof(movieDetails));
+
+  useEffect(() => {
+    const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
+
+    axios.get(apiUrl)
+      .then((response) => {
+        setMovieDetails(response.data);
+        
+      })
+      .catch((error) => {
+        console.error('Error fetching movie details:', error);
+      });
+  }, [ ]);
+
+  // if (movieDetails) {
+  //   return <div>
+  //         Loading Movies
+  //   </div>;
+  // }
+
+  
 
   return (
   
         <>
             <div className=" flex flex-col col-span-3 mt-6">
-          <div className="movie-display">
+             
+             <div>
+                 <div className="movie-display"> 
             <img className="" src={movieimage} ></img>
           </div>
           <div className="movie-details p-3 grid grid-cols-3 gap-4 col-span-6 mt-6">
             <div className=" details col-span-2">
                 <div className="1st-section">
                       <div className="flex title text-black">
-                       <span className="font-bold text-[20px]">{}</span> 
-                        <span className="text-red-800 text-[15px] text-center font-semibold border-[2px] flex items-center p-2 ml-2 border-red-200 rounded-3xl">
-                          Action
-                        </span>
-                        <span className="text-red-800 font-semibold border-[2px] text-center p-2 ml-2 border-red-200 rounded-3xl">
-                          Drama
-                        </span>
-                      </div>
+                       <span className="font-bold text-[20px]">
+                        {movieDetails.title}
+                         </span> 
+                        
+                          {/* {movieDetails.genres.map((value, key)=> 
+                          <div className="text-red-800 text-[15px] text-center font-semibold border-[2px] flex items-center p-2 ml-2 border-red-200 rounded-3xl"
+                          key={key}>{value.name}
+                       
+                        </div>)} */}
+                    
+                    
+                        
+                         </div>
                       <div className="descripton pt-4 text-lg font-normal">
-                          After thirty years, Maverick is still pushing the envelope as a top naval aviator,
-                          but must confront ghosts of his past when he leads TOP GUN{"'s"} elite graduates
-                          on a mission that demands the ultimate sacrifice from those chosen to fly it.
+                          {movieDetails.overview}
                         </div>
                 
                   </div>
@@ -80,6 +118,8 @@ const Movietitle = () => {
                  
             </div>
           </div>
+               </div>
+        
         </div>
         </>
   )

@@ -12,14 +12,9 @@ const Movietitle = () => {
 
   const { id } = useParams();
 
-
-
   const apiKey = import.meta.env.VITE_API_KEY;
   const [movieDetails, setMovieDetails] = useState([]);
-  console.log(movieDetails);
   // console.log(typeof (movieDetails));
-
-
   useEffect(() => {
     const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
 
@@ -33,11 +28,7 @@ const Movietitle = () => {
       });
   }, [apiKey, id]);
 
-
-
-
   return (
-
     <>
       <div className=" flex flex-col col-span-3 mt-6">
 
@@ -50,13 +41,13 @@ const Movietitle = () => {
               <div className="1st-section">
                 <div className="flex title text-black">
                   <span className="font-bold text-[20px]">
-                    {movieDetails.title}
+                    {movieDetails.title}  • {movieDetails.release_date}  • 
                   </span>
 
                   {movieDetails && movieDetails.genres && movieDetails.genres.map((genre, index) => (
                     <div
                       key={index}
-                      className="text-red-800 text-[15px] text-center font-semibold border-[2px] flex items-center p-2 ml-2 border-red-200 rounded-3xl"
+                      className="text-red-800 text-[14px] text-center font-semibold border-[2px] flex items-center p-[6px] ml-1 border-red-200 rounded-3xl"
                     >
                       {genre.name}
                     </div>

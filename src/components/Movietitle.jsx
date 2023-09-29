@@ -62,14 +62,6 @@ const Movietitle = () => {
                     </div>
                   ))}
 
-
-
-
-
-
-
-
-
                 </div>
                 <div className="descripton pt-4 text-lg font-normal">
                   {movieDetails.overview}

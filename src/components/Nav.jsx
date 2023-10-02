@@ -1,15 +1,21 @@
-import logo from '../assets/Logo.svg'
-import home from '../assets/Home.svg'
-import moviesprojector from '../assets/Movie Projector.svg'
-import tv from '../assets/TV Show.svg'
 import logout from '../assets/Logout.svg'
+import { menuLists } from '../../request'
+import { useState } from 'react'
 
 const Nav = () => {
+  const [active, setActive] = useState()
   return (
     <>
       <div className="flex col-span-1 nav pr-[100px] w-full flex-col pl-6 pt-12 h-screen item-center">
-
-        <div className="flex moviebox-log items-center">
+        {menuLists.map((menu, index) => {
+          return (
+            <div className={active === index ? " moviebox-log items-center bg-[#BE123C1A] pt-4 pb-4 pl-12 ml-[-48px] mt-5" : " moviebox-log items-center"} key={index}>
+              <a href={menu.link} className={active === index ? "cursor-pointer flex items-center hover:text-[#666666] " : "flex items-center pt-4 pb-4"}><img src={menu.logo} alt="logo" />
+                <div className={active === index ? "logo-title pl-3 font-bold text-black text-[24px] cursor-pointer " : "cursor-pointer pl-3 font-semibold text-[#666666] text-[20px]"} onClick={() => { setActive(index) }}>{menu.name}</div></a>
+            </div>
+          )
+        })}
+        {/* <div className="flex moviebox-log items-center">
           <a href='/' className="cursor-pointer flex items-center"><img src={logo} alt="logo" />
             <div className="logo-title pl-3 font-bold text-black text-[24px] cursor-pointer">MovieBox</div></a>
         </div>
@@ -39,7 +45,7 @@ const Nav = () => {
               <div className="logo-title pl-3 font-semibold text-[#666666] text-[20px]">Upcoming</div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className='movie-quizes rounded-2xl mt-6 pb-2 pt-8 pl-2.5 pr-2.5 ml-[-9px] bg-[#F8E7EB66] border-[1px] border-[#BE123CB2]'>
           <p className=' font-bold text-[16px] text-[#333333CC]'>Play movie quizes and earn free tickets</p>
           <p className='text-[12px] font-[450] text-[#666666]'>50K People are playing now</p>

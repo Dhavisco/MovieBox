@@ -1,7 +1,7 @@
 import play from '../assets/Play.svg'
 const SignInButton = () => {
   return (
-    <div className="text-white cursor-pointer" onClick={()=>{alert("clicked")}}>
+    <div className="text-white cursor-pointer  hidden md:block" onClick={()=>{alert("clicked")}}>
       Sign Up
     </div>
   )

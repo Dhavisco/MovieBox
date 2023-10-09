@@ -34,8 +34,7 @@ const SearchMovie = () => {
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value);
   };
-console.log(searchResults);
-  
+
 return (
     <>
     <label className="">

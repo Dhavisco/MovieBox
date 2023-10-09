@@ -8,8 +8,8 @@ import rectangle from '../assets/Rectangle 1.svg'
 const Herotext = () => {
   return (
     <>
-    <div className=" grid lg:grid-cols-2 column w-full h-[90vh] font-sans content-center ">
-      <div className="text-white flex ml-[8vw] flex-col w-[50%]">
+    <div className="grid lg:grid-cols-2 column w-[100%] h-[90vh] font-sans content-center md:pr-20">
+      <div className="text-white flex ml-[8vw] flex-col w-[60%] md:w-[50%]">
         <h1 className="text-5xl font-bold pb-5">John Wick 3 : Parabellum</h1>
 
         <div className="hero-rating w-85 flex">
@@ -30,10 +30,10 @@ const Herotext = () => {
     <EventButton/>
       </div>
 
-       <div className="flex font-sans flex-col gap-2.5 text-xs text-[#9CA3AF] items-end pr-10 justify-center content-center">
+       <div className="flex font-sans md:flex-col gap-6 text-xl text-[#9CA3AF] items-end pt-24 md:pt-0 justify-center content-center">
         <div className="flex ">1</div>
         <div className="flex">2</div>
-        <div className="flex text-white text-base"><span className="pr-1.5 pt-2.5"><img src={rectangle} alt="" /></span>3</div>
+        <div className="flex text-white"><span className="pr-1.5 pt-[13px]"><img src={rectangle} alt="" /></span>3</div>
         <div className="flex">4</div>
         <div className="flex">5</div>
       </div>

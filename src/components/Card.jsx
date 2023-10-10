@@ -24,7 +24,6 @@ const Card = () => {
        
       });
   }, []);
-   console.log(movieLoader)
    
    
 

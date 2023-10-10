@@ -9,16 +9,18 @@ const SignInButton = () => {
 
 const EventButton = () => {
   return (
-    <div className="text-white text-center flex bg-[#BE123C] pl-2 pr-2 p-2 w-2/4 rounded-lg cursor-pointer" onClick={()=>{alert("clicked")}}>
-     <img src={play} alt="play"/> <span className=' font-medium'>WATCH TRAILER</span>
-    </div>
+    <div className="text-white text-center flex bg-[#BE123C] w-[60%] px-2 p-2 rounded-lg cursor-pointer items-center content-center justify-center">
+  <img src={play} alt="play" />
+  <span className='pl-1 font-medium'>WATCH TRAILER</span>
+</div>
+
   )
 }
 
 const SeeMoreButton = () => {
   return (
     <div className="flex items-center cursor-pointer" >
-           <div className="text-[#BE123C] text-lg" onClick={()=>{alert("clicked")}}>see more  &gt;</div>
+           <div className="text-[#BE123C] text-lg">see more  &gt;</div>
             </div>     
 )
 }

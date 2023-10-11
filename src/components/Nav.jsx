@@ -1,17 +1,23 @@
 import logout from '../assets/Logout.svg'
 import { menuLists } from '../../request'
 import { useState } from 'react'
+import logo from "../assets/Logo.svg"
 
 const Nav = () => {
   const [active, setActive] = useState()
   return (
     <>
-      <div className="flex col-span-1 nav pr-[100px] w-full flex-col pl-6 pt-12 h-screen item-center">
+      <div className="flex col-span-1 nav lg:pr-[100px] w-[100%] flex-col lg:pl-6 pt-4 md:pt-12 h-screen item-center overflow-y-auto">
+         <div className="flex moviebox-log items-center">
+          <a href='/' className="cursor-pointer flex items-center"><img src={logo} alt="logo" />
+            <div className="logo-title pl-3 font-bold text-black text-[24px] cursor-pointer hidden md:block">MovieBox</div></a>
+        </div>
+
         {menuLists.map((menu, index) => {
           return (
-            <div className={active === index ? " moviebox-log items-center bg-[#BE123C1A] pt-4 pb-4 pl-12 ml-[-48px] mt-5" : " moviebox-log items-center"} key={index}>
+            <div className={active === index ? " pl-2 moviebox-log items-center bg-[#BE123C1A] pt-4 pb-4 lg:pl-12 lg:ml-[-48px] mt-5" : " pl-2 moviebox-log items-center"} key={index}>
               <a href={menu.link} className={active === index ? "cursor-pointer flex items-center hover:text-[#666666] " : "flex items-center pt-4 pb-4"}><img src={menu.logo} alt="logo" />
-                <div className={active === index ? "logo-title pl-3 font-bold text-black text-[24px] cursor-pointer " : "cursor-pointer pl-3 font-semibold text-[#666666] text-[20px]"} onClick={() => { setActive(index) }}>{menu.name}</div></a>
+                <div className={active === index ? "logo-title pl-3 font-bold text-black text-[24px] cursor-pointer hidden md:block " : "cursor-pointer hidden md:block pl-3 font-semibold text-[#666666] text-[20px]"} onClick={() => { setActive(index) }}>{menu.name}</div></a>
             </div>
           )
         })}
@@ -46,15 +52,15 @@ const Nav = () => {
             </div>
           </div>
         </div> */}
-        <div className='movie-quizes rounded-2xl mt-6 pb-2 pt-8 pl-2.5 pr-2.5 ml-[-9px] bg-[#F8E7EB66] border-[1px] border-[#BE123CB2]'>
+        <div className='movie-quizes rounded-2xl mt-6 pb-2 pt-8 pl-2.5 pr-2.5 ml-[-9px] bg-[#F8E7EB66] border-[1px] border-[#BE123CB2] hidden md:block'>
           <p className=' font-bold text-[16px] text-[#333333CC]'>Play movie quizes and earn free tickets</p>
           <p className='text-[12px] font-[450] text-[#666666]'>50K People are playing now</p>
           <div className='start-playing text-[14px] font-bold mt-2 ml-2.5 mb-2 pt-1.5 pb-1.5 pr-2 pl-2 w-[80%] items-center bg-[#BE123C33] text-[#BE123C] rounded-3xl text-center border-red-500'>Start playing</div>
         </div>
-        <div className='Log-out pt-6 pb-12'>
+        <div className='Log-out pl-2 pt-6 pb-12'>
           <div className="flex">
             <div className=""><img src={logout} alt="logout" /></div>
-            <div className="logo-title pl-3 font-semibold text-[#666666] text-[20px]">Logout</div>
+            <div className="logo-title pl-3 font-semibold text-[#666666] text-[20px] hidden md:block">Logout</div>
           </div>
         </div>
       </div>

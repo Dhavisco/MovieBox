@@ -30,31 +30,42 @@ const Movietitle = () => {
 
   return (
     <>
-      <div className=" flex flex-col col-span-3 mt-6">
+      <div className=" flex flex-row col-span-3 md:flex-col md:col-span-3 mt-2 ml-1.5 md:mt-6">
 
         <div>
           <div className="movie-display">
             <img className="" src={movieimage} ></img>
-          </div>
-          <div className="movie-details p-3 grid grid-cols-3 gap-4 col-span-6 mt-6">
-            <div className=" details col-span-2">
-              <div className="1st-section">
-                <div className="flex title text-black">
-                  <span className="font-bold text-[20px]">
-                    {movieDetails.title}  • {movieDetails.release_date}  • 
-                  </span>
-
-                  {movieDetails && movieDetails.genres && movieDetails.genres.map((genre, index) => (
-                    <div
-                      key={index}
-                      className="text-red-800 text-[14px] text-center font-semibold border-[2px] flex items-center p-[6px] ml-1 border-red-200 rounded-3xl"
-                    >
-                      {genre.name}
-                    </div>
-                  ))}
+            <div className="movie-title md:flex justify-between title text-black mt-3">
+              <div className="md:flex flex-col md:flex-row items-center">
+                  <div className="flex font-bold md:text-[20px]">
+                                {movieDetails.title}  • {movieDetails.release_date}  • 
+                              </div>
+                          <div className="genre grid grid-cols-4 ">
+                              {movieDetails && movieDetails.genres && movieDetails.genres.map((genre, index) => (
+                                <div
+                                  key={index}
+                                  className="text-red-800 text-[14px] text-center font-semibold border-[2px] items-center p-[6px] m-1 border-red-200 rounded-3xl"
+                                >
+                                  {genre.name}
+                                </div>
+                              ))}
+              </div>
+              </div>
+                  
+                 <div className="rating text-black flex items-center md:h-16">
+                    <img src={star} alt="star" />
+                    <span className="logo-title font-semibold text-[10px] md:text-[14px] text-[#111827] pl-2">8.5% | 350k </span>
+                  </div>   
 
                 </div>
-                <div className="descripton pt-4 text-lg font-normal">
+          </div>
+
+
+          <div className="movie-details md:grid md:grid-cols-3 gap-4">
+            <div className=" details md:col-span-2">
+              <div className="1st-section">
+                
+                <div className="descripton pt-1 md:text-lg font-normal">
                   {movieDetails.overview}
                 </div>
 
@@ -80,16 +91,9 @@ const Movietitle = () => {
                 </button>
               </div>
             </div>
-            <div className="rating-showtime">
+            <div className="md:col-span-1 rating-showtime">
               <div className="rating-watch-options">
-                <div className="rating-watch-options">
-                  <div className="rating text-black flex justify-end items-center h-16">
-                    <img src={star} alt="star" />
-                    <span className="logo-title font-semibold text-[#111827] pl-2">8.5% | 350k </span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col buttons content-center items-center">
+                <div className="md:flex md:flex-col buttons content-center items-center">
                   <button className="flex flex-row showtime-button p-3 pl-[70px] rounded-lg font-medium  bg-[#BE123C] text-white">
                     <img src={twoposter}></img> <span className="pl-1 pt-1 pr-[60px]">See Showtimes</span>
                   </button>

@@ -9,7 +9,7 @@ const Movieheader = () => {
   return (
     <div>
       <>
-      <div className="movie-header w-full grid grid-cols-4 font-[poppins] justify-between pr-6 pl-6 items-stretch">
+      <div className="movie-header w-full flex flex-cols md:grid md:grid-cols-4 font-[poppins] justify-between px-3 md:px-6 items-stretch overflow-y-auto">
         <Nav/>
         <Movietitle 
         />

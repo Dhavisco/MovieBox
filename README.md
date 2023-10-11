@@ -22,7 +22,9 @@ Make sure you have the following software installed:
    ```
 2. Change the directory to the project folder.
 3. Install project dependencies using npm.
-    npm install
+```bash
+   npm install
+```
 
 ### Usage
 1. Obtain an API key from The Movie Database (TMDb) API. You can sign up at https://www.themoviedb.org/documentation/api to get your API key.
@@ -31,7 +33,9 @@ Make sure you have the following software installed:
     VITE_API_KEY="your_api_key_here"
 
 3. Start the development server.
-    npm run dev
+```bash
+   npm run dev
+```
 
 4. Open your web browser and open the generated localhost link
 
